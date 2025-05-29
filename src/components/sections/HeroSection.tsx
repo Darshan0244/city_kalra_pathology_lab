@@ -7,13 +7,13 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-background via-secondary/50 to-background pt-20 px-4">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://placehold.co/1600x900.png"
-          alt="Kalra Path Lab background"
+          src="/images/kalra-path-lab-camp.jpg"
+          alt="Kalra Path Lab health check-up camp"
           fill={true}
           style={{objectFit:"cover"}}
           className="opacity-10"
           priority
-          data-ai-hint="modern laboratory clean"
+          data-ai-hint="health camp"
         />
          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
       </div>
