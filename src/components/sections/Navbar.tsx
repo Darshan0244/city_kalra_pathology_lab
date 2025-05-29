@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -67,12 +68,15 @@ export default function Navbar() {
                    <SheetTitle>
                      <Logo iconSize="h-7 w-7" textSize="text-xl" />
                    </SheetTitle>
+                   {/* The SheetContent component already provides a close button by default.
+                       The explicit SheetClose button below was redundant and caused two X icons.
                    <SheetClose asChild>
                      <Button variant="ghost" size="icon">
                        <X className="h-6 w-6 text-primary" />
                        <span className="sr-only">Close menu</span>
                      </Button>
                    </SheetClose>
+                   */}
                 </div>
                 {navItems.map((item) => (
                   <SheetClose key={item.label} asChild>
