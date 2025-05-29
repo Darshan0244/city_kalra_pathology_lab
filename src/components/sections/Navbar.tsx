@@ -1,11 +1,12 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, TestTube2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -63,7 +64,9 @@ export default function Navbar() {
             <SheetContent side="right" className="w-[280px] bg-background p-6">
               <div className="flex flex-col space-y-6">
                 <div className="flex justify-between items-center mb-4">
-                   <Logo iconSize="h-7 w-7" textSize="text-xl" />
+                   <SheetTitle>
+                     <Logo iconSize="h-7 w-7" textSize="text-xl" />
+                   </SheetTitle>
                    <SheetClose asChild>
                      <Button variant="ghost" size="icon">
                        <X className="h-6 w-6 text-primary" />
