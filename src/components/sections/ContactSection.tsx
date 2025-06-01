@@ -25,7 +25,7 @@ export default function ContactSection() {
                 <div className="space-y-4 text-foreground/90">
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                    <span>123 Health St, Wellness City, MedState 12345</span>
+                    <span>City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001</span>
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 mr-3 text-accent flex-shrink-0" />

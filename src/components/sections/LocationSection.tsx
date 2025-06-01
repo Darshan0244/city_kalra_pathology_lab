@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function LocationSection() {
-  const labAddress = "123 Health St, Wellness City, MedState 12345";
+  const labAddress = "City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001";
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(labAddress)}`;
 
   return (
