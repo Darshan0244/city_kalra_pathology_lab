@@ -43,9 +43,13 @@ export default function LocationSection() {
                 </Button>
               </div>
               
-              <div className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-foreground/90">(123) 456-7890</span>
+              <div className="flex items-start">
+                <Phone className="mr-3 h-5 w-5 text-accent flex-shrink-0 mt-1" />
+                 <div>
+                    <p className="text-foreground/90">9896187582</p>
+                    <p className="text-foreground/90">9729334048</p>
+                    <p className="text-foreground/90">9728368076</p>
+                  </div>
               </div>
               <div className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-accent flex-shrink-0" />

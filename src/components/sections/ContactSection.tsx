@@ -23,13 +23,17 @@ export default function ContactSection() {
              <div className="bg-card p-6 rounded-lg shadow-xl">
                 <h3 className="text-xl font-semibold text-primary mb-4">Contact Information</h3>
                 <div className="space-y-4 text-foreground/90">
-                  <div className="flex items-center">
-                    <MapPin className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
+                  <div className="flex items-start">
+                    <MapPin className="h-5 w-5 mr-3 text-accent flex-shrink-0 mt-1" />
                     <span>City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001</span>
                   </div>
-                  <div className="flex items-center">
-                    <Phone className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                    <span>(123) 456-7890</span>
+                  <div className="flex items-start">
+                    <Phone className="h-5 w-5 mr-3 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <p>9896187582</p>
+                      <p>9729334048</p>
+                      <p>9728368076</p>
+                    </div>
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 mr-3 text-accent flex-shrink-0" />

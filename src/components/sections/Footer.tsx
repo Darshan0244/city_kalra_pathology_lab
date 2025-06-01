@@ -52,7 +52,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-primary-foreground">Contact Us</h3>
             <address className="not-italic space-y-2 text-primary-foreground/80">
               <p>City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001</p>
-              <p>Phone: (123) 456-7890</p>
+              <p>Phone: 9896187582, 9729334048, 9728368076</p>
               <p>Email: info@kalrapathlab.com</p>
             </address>
             <div className="mt-4 flex space-x-3">
