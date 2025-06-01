@@ -7,16 +7,18 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-background via-secondary/50 to-background pt-20 px-4">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/City_Kalra.png"
+          src="/images/kalra-path-lab-camp.jpg"
           alt="City Kalra Pathology Laboratory health check-up camp"
           fill={true}
           style={{objectFit:"cover"}}
-          className="opacity-65"
+          className="opacity-10"
           priority
           data-ai-hint="health camp"
         />
- <div className="absolute inset-0 bg-gray-900 opacity-45"></div>
-         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gray-900 opacity-45"></div>
+        {/* The gradient overlay below was causing the "white foggy type" effect and has been removed.
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div> 
+        */}
       </div>
       <div className="relative z-10 max-w-3xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
