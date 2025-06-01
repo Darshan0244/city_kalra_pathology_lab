@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <Logo className="text-primary-foreground mb-4" iconSize="h-8 w-8" textSize="text-2xl" />
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              Kalra Path Lab is dedicated to providing precise diagnostic services with a focus on patient care and technological advancement.
+              City Kalra Pathology Laboratory is dedicated to providing precise diagnostic services with a focus on patient care and technological advancement.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center text-sm text-primary-foreground/70">
-          <p>&copy; {currentYear} Kalra Path Lab. All Rights Reserved.</p>
+          <p>&copy; {currentYear} City Kalra Pathology Laboratory. All Rights Reserved.</p>
           <p className="mt-1">
             Designed with care for your health.
           </p>

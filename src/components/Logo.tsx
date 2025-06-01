@@ -10,7 +10,7 @@ const Logo = ({ className, iconSize = "h-8 w-8", textSize = "text-2xl" }: LogoPr
   return (
     <a href="#home" className={`flex items-center space-x-2 font-bold text-primary ${className}`}>
       <TestTube2 className={`${iconSize}`} />
-      <span className={`${textSize}`}>Kalra Path Lab</span>
+      <span className={`${textSize}`}>City Kalra Pathology Laboratory</span>
     </a>
   );
 };

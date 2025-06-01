@@ -8,7 +8,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            About Kalra Path Lab
+            About City Kalra Pathology Laboratory
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             Dedicated to providing accurate and timely diagnostic services to our community with state-of-the-art technology and a compassionate approach.
@@ -18,7 +18,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-foreground text-left leading-relaxed">
-              Kalra Path Lab has been a cornerstone of health in our community for over a decade. Founded on the principles of precision, reliability, and patient-centric care, we strive to deliver the highest quality diagnostic services. Our team of experienced pathologists and technicians are committed to utilizing the latest advancements in medical technology to ensure you receive the most accurate results.
+              City Kalra Pathology Laboratory has been a cornerstone of health in our community for over a decade. Founded on the principles of precision, reliability, and patient-centric care, we strive to deliver the highest quality diagnostic services. Our team of experienced pathologists and technicians are committed to utilizing the latest advancements in medical technology to ensure you receive the most accurate results.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card className="shadow-md hover:shadow-lg transition-shadow">
@@ -47,7 +47,7 @@ export default function AboutSection() {
           <div className="rounded-lg overflow-hidden shadow-xl aspect-video">
             <Image
               src="https://placehold.co/600x450.png"
-              alt="Kalra Path Lab interior"
+              alt="City Kalra Pathology Laboratory interior"
               width={600}
               height={450}
               className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"

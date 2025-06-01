@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/City_Kalra.png"
-          alt="Kalra Path Lab health check-up camp"
+          alt="City Kalra Pathology Laboratory health check-up camp"
           fill={true}
           style={{objectFit:"cover"}}
           className="opacity-65"
@@ -20,7 +20,7 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 max-w-3xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
-          <span className="text-primary">Kalra</span> <span className="text-accent">Path Lab</span>
+          <span className="text-primary">City Kalra</span> <span className="text-accent">Pathology Laboratory</span>
         </h1>
         <p className="text-xl md:text-2xl text-white mb-10">
           Precise Diagnostics, Trusted Care. Your Health, Our Priority.

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kalra Path Lab - Precise Diagnostics, Trusted Care',
+  title: 'City Kalra Pathology Laboratory - Precise Diagnostics, Trusted Care',
   description: 'Kalra Pathology Laboratory offers comprehensive diagnostic services with a commitment to accuracy and patient care.',
 };
 
