@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -14,9 +15,10 @@ export default function HeroSection() {
           priority
           data-ai-hint="health camp"
         />
-        <div className="absolute inset-0 bg-gray-900 opacity-45"></div>
+        {/* Further reduced opacity from 45 to 30 to make the image more visible */}
+        <div className="absolute inset-0 bg-gray-900 opacity-30"></div>
         {/* The gradient overlay below was causing the "white foggy type" effect and has been removed.
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div> 
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         */}
       </div>
       <div className="relative z-10 max-w-3xl mx-auto">
