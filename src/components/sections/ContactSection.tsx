@@ -44,9 +44,7 @@ export default function ContactSection() {
              <div className="bg-card p-6 rounded-lg shadow-xl">
                 <h3 className="text-xl font-semibold text-primary mb-4">Business Hours</h3>
                 <div className="space-y-1 text-foreground/90">
-                    <p>Monday - Friday: <strong>8:00 AM - 6:00 PM</strong></p>
-                    <p>Saturday: <strong>9:00 AM - 1:00 PM</strong></p>
-                    <p>Sunday: <strong>Closed</strong></p>
+                    <p>Monday - Sunday: <strong>8:00 AM - 9:00 PM</strong></p>
                 </div>
              </div>
           </div>

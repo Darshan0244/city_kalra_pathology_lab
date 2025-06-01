@@ -59,9 +59,7 @@ export default function LocationSection() {
                 <Clock className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Operating Hours</h3>
-                  <p className="text-foreground/90">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-foreground/90">Saturday: 9:00 AM - 1:00 PM</p>
-                  <p className="text-foreground/90">Sunday: Closed</p>
+                  <p className="text-foreground/90">Monday - Sunday: <strong>8:00 AM - 9:00 PM</strong></p>
                 </div>
               </div>
             </CardContent>
