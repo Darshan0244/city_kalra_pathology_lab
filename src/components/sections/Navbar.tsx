@@ -37,7 +37,7 @@ export default function Navbar() {
       } text-primary-foreground`}
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Logo iconSize="h-7 w-7" textSize="text-xl" />
+        <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
@@ -66,17 +66,8 @@ export default function Navbar() {
               <div className="flex flex-col space-y-6">
                 <div className="flex justify-between items-center mb-4">
                    <SheetTitle>
-                     <Logo iconSize="h-7 w-7" textSize="text-xl" />
+                     <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
                    </SheetTitle>
-                   {/* The SheetContent component already provides a close button by default.
-                       The explicit SheetClose button below was redundant and caused two X icons.
-                   <SheetClose asChild>
-                     <Button variant="ghost" size="icon">
-                       <X className="h-6 w-6 text-primary" />
-                       <span className="sr-only">Close menu</span>
-                     </Button>
-                   </SheetClose>
-                   */}
                 </div>
                 {navItems.map((item) => (
                   <SheetClose key={item.label} asChild>
