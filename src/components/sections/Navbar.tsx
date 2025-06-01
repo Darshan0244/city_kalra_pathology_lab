@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,7 +24,7 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-md shadow-md text-primary-foreground"
     >
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
         
         {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ export default function Navbar() {
                <SheetTitle>
                   <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
                </SheetTitle>
-              <div className="flex flex-col space-y-6 mt-6"> {/* Added mt-6 for spacing below title */}
+              <div className="flex flex-col space-y-6 mt-6">
                 {navItems.map((item) => (
                   <SheetClose key={item.label} asChild>
                     <Link href={item.href} legacyBehavior>
