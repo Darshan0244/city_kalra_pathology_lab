@@ -11,7 +11,6 @@ export default function HeroSection() {
           alt="City Kalra Pathology Laboratory health check-up camp"
           fill={true}
           style={{objectFit:"cover"}}
-          className="opacity-10"
           priority
           data-ai-hint="health camp"
         />
