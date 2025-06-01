@@ -1,10 +1,9 @@
 
-
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
@@ -19,22 +18,11 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-md' : 'bg-transparent'
-      } text-primary-foreground`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-md shadow-md text-primary-foreground"
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
@@ -63,12 +51,10 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background p-6">
-              <div className="flex flex-col space-y-6">
-                <div className="flex justify-between items-center mb-4">
-                   <SheetTitle>
-                     <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
-                   </SheetTitle>
-                </div>
+               <SheetTitle>
+                  <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
+               </SheetTitle>
+              <div className="flex flex-col space-y-6 mt-6"> {/* Added mt-6 for spacing below title */}
                 {navItems.map((item) => (
                   <SheetClose key={item.label} asChild>
                     <Link href={item.href} legacyBehavior>
