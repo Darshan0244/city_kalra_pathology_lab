@@ -46,7 +46,7 @@ export default function AboutSection() {
           </div>
           <div className="rounded-lg overflow-hidden shadow-xl aspect-video">
             <Image
-              src="https://placehold.co/600x450.png"
+              src="/images/4.png"
               alt="City Kalra Pathology Laboratory interior"
               width={600}
               height={450}

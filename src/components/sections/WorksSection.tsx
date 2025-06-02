@@ -4,7 +4,7 @@ import { CheckCircle, Users, TrendingUp } from 'lucide-react';
 
 const achievements = [
   {
-    imageSrc: 'https://placehold.co/400x300.png',
+    imageSrc: '/images/1.png',
     imageAlt: 'Advanced Laboratory Equipment',
     title: 'State-of-the-Art Technology',
     description: 'We continuously invest in the latest diagnostic equipment to ensure unparalleled accuracy and efficiency in our testing processes.',
@@ -12,7 +12,7 @@ const achievements = [
     icon: <TrendingUp className="h-5 w-5 text-accent" />
   },
   {
-    imageSrc: 'https://placehold.co/400x300.png',
+    imageSrc: '/images/2.png',
     imageAlt: 'Certified Pathologists Team',
     title: 'Expert Team Accreditation',
     description: 'Our team of pathologists and technicians are highly skilled, certified, and dedicated to maintaining the highest standards of quality.',
@@ -20,7 +20,7 @@ const achievements = [
     icon: <Users className="h-5 w-5 text-accent" />
   },
   {
-    imageSrc: 'https://placehold.co/400x300.png',
+    imageSrc: '/images/3.png',
     imageAlt: 'Community Health Initiative',
     title: 'Community Health Awards',
     description: 'Recognized for our contributions to community health through various awareness programs and free health camps.',

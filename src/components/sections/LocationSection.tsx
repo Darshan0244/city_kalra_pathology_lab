@@ -68,7 +68,7 @@ export default function LocationSection() {
           <div className="rounded-lg overflow-hidden shadow-xl aspect-square md:aspect-auto">
             <Link href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
               <Image
-                src="https://placehold.co/600x600.png"
+                src="/images/City_Lab_Visit.png"
                 alt="Lab Location Map"
                 width={600}
                 height={600}

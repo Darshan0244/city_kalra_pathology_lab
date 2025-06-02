@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/Logo';
+import Image from 'next/image';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 
 const navItems = [
@@ -26,7 +27,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Logo iconSize="h-7 w-7" textSize="text-xl" showText={false} />
-        
+
+ {/* Logo and full name for larger screens */}
+ <div className="hidden md:flex items-center space-x-2">
+ <Link href="#home" className="flex items-center space-x-2">
+ 
+ </Link>
+ </div>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
           {navItems.map((item) => (

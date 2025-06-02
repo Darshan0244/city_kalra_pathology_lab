@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Linkedin, TestTube2 } from 'lucide-react';
+import { Facebook, Instagram, TestTube2 } from 'lucide-react'; // Removed Twitter, Linkedin
 import Logo from '@/components/Logo';
 
 const navItems = [
@@ -10,10 +10,8 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
-  { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
-  { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
-  { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
+  { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/citykalrapathologylaboratory', label: 'Facebook' },
+  { icon: <Instagram className="h-5 w-5" />, href: 'https://www.instagram.com/citykalrapathologylaboratory/', label: 'Instagram' },
 ];
 
 export default function Footer() {
