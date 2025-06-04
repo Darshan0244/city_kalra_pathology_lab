@@ -37,7 +37,7 @@ export default function ContactSection() {
                   </div>
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                    <span>info@kalrapathlab.com</span>
+                    <span>Satnamalhan@gmail.com</span>
                   </div>
                 </div>
              </div>

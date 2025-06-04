@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram, TestTube2 } from 'lucide-react'; // Removed Twitter, Linkedin
+import { Facebook, Instagram, TestTube2 } from 'lucide-react'; 
 import Logo from '@/components/Logo';
 
 const navItems = [
@@ -51,7 +51,7 @@ export default function Footer() {
             <address className="not-italic space-y-2 text-primary-foreground/80">
               <p>City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001</p>
               <p>Phone: 9896187582, 9729334048, 9728368076</p>
-              <p>Email: info@kalrapathlab.com</p>
+              <p>Email: Satnamalhan@gmail.com</p>
             </address>
             <div className="mt-4 flex space-x-3">
               {socialLinks.map((social) => (

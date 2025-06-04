@@ -1,7 +1,8 @@
+
 // @ts-nocheck
 'use client';
 
-import { useActionState } from 'react'; // Updated import
+import { useActionState } from 'react'; 
 import { useFormStatus } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -19,7 +20,7 @@ import { Loader2 } from 'lucide-react';
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Invalid email address." }),
-  phone: z.string().optional(),
+  phone: z.string().min(1, { message: "Phone number is required." }),
   subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
@@ -42,7 +43,7 @@ function SubmitButton() {
 }
 
 export default function ContactForm() {
-  const [state, formAction] = useActionState(submitContactForm, initialState); // Updated usage
+  const [state, formAction] = useActionState(submitContactForm, initialState); 
   const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
@@ -63,7 +64,7 @@ export default function ContactForm() {
           title: "Success!",
           description: state.message,
         });
-        form.reset(); // Reset form on successful submission
+        form.reset(); 
       } else {
         toast({
           title: "Error",
@@ -74,7 +75,6 @@ export default function ContactForm() {
     }
   }, [state, toast, form]);
   
-  // Update form errors from server action state
   useEffect(() => {
     if (state.errors) {
       const errors = state.errors;
@@ -103,7 +103,7 @@ export default function ContactForm() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="phone" className="text-foreground/90">Phone Number (Optional)</Label>
+          <Label htmlFor="phone" className="text-foreground/90">Phone Number</Label>
           <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" {...form.register('phone')} className="bg-background border-border focus:ring-primary" />
           {form.formState.errors.phone && <p className="text-sm text-destructive mt-1">{form.formState.errors.phone.message}</p>}
         </div>
