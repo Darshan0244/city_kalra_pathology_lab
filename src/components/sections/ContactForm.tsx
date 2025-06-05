@@ -42,7 +42,7 @@ export default function ContactForm() {
   const handleClientSubmit = (data: ContactFormData) => {
     setIsSubmitting(true);
     const emailTo = "Satnamalhan@gmail.com";
-    const emailSubject = data.subject; // Removed "Contact Form: " prefix
+    const emailSubject = data.subject; 
     
     const bodyLines = [
       `Name: ${data.name}`,
@@ -50,7 +50,7 @@ export default function ContactForm() {
       `Phone: ${data.phone}`,
       `Message: ${data.message}`
     ];
-    const emailBody = bodyLines.join('%0D%0A'); // Using %0D%0A for URL-encoded newlines
+    const emailBody = bodyLines.join('\r\n'); // Use actual newline characters
 
     const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     
