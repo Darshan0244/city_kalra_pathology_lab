@@ -20,19 +20,19 @@ export default function LocationSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
-          <div className="rounded-lg overflow-hidden shadow-xl aspect-square">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch p-4 justify-items-center">
+          <div className="rounded-lg overflow-hidden shadow-xl w-full max-w-[550px] aspect-square">
             <Image
-              src="https://placehold.co/600x600.png"
+              src="/images/City_Lab_Visit.png"
               alt="Placeholder image for lab location"
-              width={600}
-              height={600}
+              width={500}
+              height={500}
               className="w-full h-full object-cover"
               data-ai-hint="lab building"
             />
           </div>
           
-          <div className="rounded-lg overflow-hidden shadow-xl aspect-square md:aspect-auto">
+          <div className="rounded-lg overflow-hidden shadow-xl w-full max-w-[550px] aspect-square md:aspect-auto">
             <iframe
               src={iframeSrc}
               className="w-full h-full"
