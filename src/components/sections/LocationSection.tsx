@@ -2,8 +2,6 @@
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 export default function LocationSection() {
   const labAddress = "City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001";
@@ -23,45 +21,16 @@ export default function LocationSection() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
-          <Card className="shadow-lg flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-2xl text-primary">
-                Contact & Location Details
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 flex-grow">
-              <div>
-                <div className="flex items-start mb-3">
-                  <MapPin className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">Our Address</h3>
-                    <p className="text-foreground/90">{labAddress}</p>
-                  </div>
-                </div>
-                {/* Removed Get Directions button as iframe provides this */}
-              </div>
-              
-              <div className="flex items-start">
-                <Phone className="mr-3 h-5 w-5 text-accent flex-shrink-0 mt-1" />
-                 <div>
-                    <p className="text-foreground/90">9896187582</p>
-                    <p className="text-foreground/90">9729334048</p>
-                    <p className="text-foreground/90">9728368076</p>
-                  </div>
-              </div>
-              <div className="flex items-center">
-                <Mail className="mr-3 h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-foreground/90">Satnamalhan@gmail.com</span>
-              </div>
-              <div className="flex items-start">
-                <Clock className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg text-foreground">Operating Hours</h3>
-                  <p className="text-foreground/90">Monday - Sunday: <strong>8:00 AM - 9:00 PM</strong></p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="rounded-lg overflow-hidden shadow-xl aspect-square">
+            <Image
+              src="https://placehold.co/600x600.png"
+              alt="Placeholder image for lab location"
+              width={600}
+              height={600}
+              className="w-full h-full object-cover"
+              data-ai-hint="lab building"
+            />
+          </div>
           
           <div className="rounded-lg overflow-hidden shadow-xl aspect-square md:aspect-auto">
             <iframe
@@ -79,3 +48,4 @@ export default function LocationSection() {
     </section>
   );
 }
+
