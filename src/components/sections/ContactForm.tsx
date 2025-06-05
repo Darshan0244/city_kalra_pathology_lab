@@ -42,7 +42,7 @@ export default function ContactForm() {
   const handleClientSubmit = (data: ContactFormData) => {
     setIsSubmitting(true);
     const emailTo = "Satnamalhan@gmail.com";
-    const emailSubject = `Contact Form: ${data.subject}`;
+    const emailSubject = data.subject; // Removed "Contact Form: " prefix
     
     const bodyLines = [
       `Name: ${data.name}`,
@@ -50,7 +50,7 @@ export default function ContactForm() {
       `Phone: ${data.phone}`,
       `Message: ${data.message}`
     ];
-    const emailBody = bodyLines.join('\n');
+    const emailBody = bodyLines.join('%0D%0A'); // Using %0D%0A for URL-encoded newlines
 
     const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
     
@@ -75,7 +75,7 @@ export default function ContactForm() {
   
   useEffect(() => {
     const subscription = form.watch((value, { name, type }) => {
-      if (type === 'change' && name && form.formState.errors[name]) {
+      if (type === 'change' && name && form.formState.errors[name as keyof ContactFormData]) {
         form.clearErrors(name as keyof ContactFormData);
       }
     });
