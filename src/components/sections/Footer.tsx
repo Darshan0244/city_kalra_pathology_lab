@@ -10,17 +10,17 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/citykalrapathologylaboratory', label: 'Facebook' },
-  { icon: <Instagram className="h-5 w-5" />, href: 'https://www.instagram.com/citykalrapathologylaboratory/', label: 'Instagram' },
+  { icon: <Facebook className="h-7 w-7" />, href: 'https://www.facebook.com/citykalrapathologylaboratory', label: 'Facebook' },
+  { icon: <Instagram className="h-7 w-7" />, href: 'https://www.instagram.com/citykalrapathologylaboratory/', label: 'Instagram' },
 ];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  return (
+  return ( 
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-primary-foreground/20">
+        <div className="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-primary-foreground/20 items-center justify-items-center">
           {/* Column 1: Logo and About */}
           <div>
             <Logo className="text-primary-foreground mb-4" iconSize="h-8 w-8" textSize="text-2xl" />
@@ -30,7 +30,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h3 className="text-lg font-semibold mb-4 text-primary-foreground">Quick Links</h3>
             <ul className="space-y-2">
               {navItems.map((item) => (
@@ -47,12 +47,7 @@ export default function Footer() {
 
           {/* Column 3: Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary-foreground">Contact Us</h3>
-            <address className="not-italic space-y-2 text-primary-foreground/80">
-              <p>City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001</p>
-              <p>Phone: 9896187582, 9729334048, 9728368076</p>
-              <p>Email: Satnamalhan@gmail.com</p>
-            </address>
+            <h3 className="text-lg font-semibold mb-4 text-primary-foreground">Social Links</h3>
             <div className="mt-4 flex space-x-3">
               {socialLinks.map((social) => (
                 <a 
@@ -62,7 +57,7 @@ export default function Footer() {
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                > 
                   {social.icon}
                 </a>
               ))}
