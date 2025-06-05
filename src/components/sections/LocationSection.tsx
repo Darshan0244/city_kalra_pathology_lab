@@ -7,7 +7,8 @@ import Link from 'next/link';
 
 export default function LocationSection() {
   const labAddress = "City Kalra Pathology Laboratory, Sirsa Rd, opposite civil hospital, Sector 14, Hisar, Haryana 125001";
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(labAddress)}`;
+  // The Google Maps URL for the iframe src attribute.
+  const iframeSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.8472749447924!2d75.71555317615224!3d29.16917247537596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232cdbf750a29%3A0xcf8c1e8842b0fdaa!2sCity%20Kalra%20Pathology%20Laboratory!5e0!3m2!1sen!2sin!4v1749102978312!5m2!1sen!2sin";
 
   return (
     <section id="location" className="py-16 md:py-24 bg-background">
@@ -37,11 +38,7 @@ export default function LocationSection() {
                     <p className="text-foreground/90">{labAddress}</p>
                   </div>
                 </div>
-                <Button variant="outline" asChild className="border-accent text-accent hover:bg-accent/10 hover:text-accent">
-                  <Link href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
-                    Get Directions
-                  </Link>
-                </Button>
+                {/* Removed Get Directions button as iframe provides this */}
               </div>
               
               <div className="flex items-start">
@@ -67,16 +64,15 @@ export default function LocationSection() {
           </Card>
           
           <div className="rounded-lg overflow-hidden shadow-xl aspect-square md:aspect-auto">
-            <Link href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-              <Image
-                src="/images/City_Lab_Visit.png"
-                alt="Lab Location Map"
-                width={600}
-                height={600}
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-                data-ai-hint="city map location pin"
-              />
-            </Link>
+            <iframe
+              src={iframeSrc}
+              className="w-full h-full"
+              style={{ border:0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="City Kalra Pathology Laboratory Location"
+            ></iframe>
           </div>
         </div>
       </div>
