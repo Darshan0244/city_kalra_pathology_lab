@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -53,7 +54,7 @@ export default function LocationSection() {
               </div>
               <div className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-foreground/90">info@kalrapathlab.com</span>
+                <span className="text-foreground/90">Satnamalhan@gmail.com</span>
               </div>
               <div className="flex items-start">
                 <Clock className="mr-3 h-6 w-6 text-accent flex-shrink-0 mt-1" />

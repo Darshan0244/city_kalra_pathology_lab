@@ -1,13 +1,10 @@
 
-// @ts-nocheck
 'use client';
 
-import { useActionState } from 'react'; 
-import { useFormStatus } from 'react-dom';
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { submitContactForm, type ContactFormState } from '@/app/actions';
 import { useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -27,24 +24,9 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-const initialState: ContactFormState = {
-  message: '',
-  success: false,
-};
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" disabled={pending} className="w-full md:w-auto" size="lg">
-      {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      {pending ? 'Sending...' : 'Send Message'}
-    </Button>
-  );
-}
-
 export default function ContactForm() {
-  const [state, formAction] = useActionState(submitContactForm, initialState); 
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -57,69 +39,86 @@ export default function ContactForm() {
     },
   });
 
-  useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        form.reset(); 
-      } else {
-        toast({
-          title: "Error",
-          description: state.message || "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
-      }
+  const handleClientSubmit = (data: ContactFormData) => {
+    setIsSubmitting(true);
+    const emailTo = "Satnamalhan@gmail.com";
+    const emailSubject = `Contact Form: ${data.subject}`;
+    
+    const bodyLines = [
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      `Message: ${data.message}`
+    ];
+    const emailBody = bodyLines.join('\n');
+
+    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    try {
+      window.location.href = mailtoLink;
+      toast({
+        title: "Success!",
+        description: "Your email client should open shortly to send the message. Please complete sending it from there.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Failed to open mailto link:", error);
+      toast({
+        title: "Error",
+        description: "Could not open email client. Please try copying the details manually.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [state, toast, form]);
+  };
   
   useEffect(() => {
-    if (state.errors) {
-      const errors = state.errors;
-      (Object.keys(errors) as Array<keyof ContactFormData>).forEach((key) => {
-        if (errors[key] && errors[key]!.length > 0) {
-          form.setError(key, { type: 'server', message: errors[key]![0] });
-        }
-      });
-    }
-  }, [state.errors, form]);
+    const subscription = form.watch((value, { name, type }) => {
+      if (type === 'change' && name && form.formState.errors[name]) {
+        form.clearErrors(name as keyof ContactFormData);
+      }
+    });
+    return () => subscription.unsubscribe();
+  }, [form]);
 
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form onSubmit={form.handleSubmit(handleClientSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <Label htmlFor="name" className="text-foreground/90">Full Name</Label>
-          <Input id="name" name="name" placeholder="John Doe" {...form.register('name')} className="bg-background border-border focus:ring-primary" />
+          <Input id="name" placeholder="John Doe" {...form.register('name')} className="bg-background border-border focus:ring-primary" />
           {form.formState.errors.name && <p className="text-sm text-destructive mt-1">{form.formState.errors.name.message}</p>}
         </div>
         <div>
           <Label htmlFor="email" className="text-foreground/90">Email Address</Label>
-          <Input id="email" name="email" type="email" placeholder="john.doe@example.com" {...form.register('email')} className="bg-background border-border focus:ring-primary" />
+          <Input id="email" type="email" placeholder="john.doe@example.com" {...form.register('email')} className="bg-background border-border focus:ring-primary" />
           {form.formState.errors.email && <p className="text-sm text-destructive mt-1">{form.formState.errors.email.message}</p>}
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <Label htmlFor="phone" className="text-foreground/90">Phone Number</Label>
-          <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" {...form.register('phone')} className="bg-background border-border focus:ring-primary" />
+          <Input id="phone" type="tel" placeholder="(123) 456-7890" {...form.register('phone')} className="bg-background border-border focus:ring-primary" />
           {form.formState.errors.phone && <p className="text-sm text-destructive mt-1">{form.formState.errors.phone.message}</p>}
         </div>
         <div>
           <Label htmlFor="subject" className="text-foreground/90">Subject</Label>
-          <Input id="subject" name="subject" placeholder="Inquiry about services" {...form.register('subject')} className="bg-background border-border focus:ring-primary" />
+          <Input id="subject" placeholder="Inquiry about services" {...form.register('subject')} className="bg-background border-border focus:ring-primary" />
           {form.formState.errors.subject && <p className="text-sm text-destructive mt-1">{form.formState.errors.subject.message}</p>}
         </div>
       </div>
       <div>
         <Label htmlFor="message" className="text-foreground/90">Message</Label>
-        <Textarea id="message" name="message" placeholder="Your message..." rows={5} {...form.register('message')} className="bg-background border-border focus:ring-primary" />
+        <Textarea id="message" placeholder="Your message..." rows={5} {...form.register('message')} className="bg-background border-border focus:ring-primary" />
         {form.formState.errors.message && <p className="text-sm text-destructive mt-1">{form.formState.errors.message.message}</p>}
       </div>
       <div>
-        <SubmitButton />
+        <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto" size="lg">
+          {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+          {isSubmitting ? 'Processing...' : 'Send Message'}
+        </Button>
       </div>
     </form>
   );
