@@ -7,13 +7,13 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-28 bg-gradient-to-br from-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          {/* Logo positioned above the heading */}
-          <div className="flex justify-center mb-8">
+          {/* Logo positioned above the heading - doubled size, minimal spacing */}
+          <div className="flex justify-center mb-4">
             <Image
               src="/images/KalraLabLogo.png"
               alt="City Kalra Pathology Laboratory Logo"
-              width={180}
-              height={180}
+              width={360}
+              height={360}
               className="drop-shadow-lg"
               priority
             />
