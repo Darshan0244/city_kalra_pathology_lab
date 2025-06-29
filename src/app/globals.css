@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --background: 215 100% 95%; /* #E8F2FF */
+    --background: 215 100% 97%; /* Lighter, cleaner background */
     --foreground: 222 47% 11%; /* #1E293B */
 
-    --card: 215 100% 97%; /* Slightly lighter than background for subtle depth */
+    --card: 0 0% 100%; /* Pure white for cards */
     --card-foreground: 222 47% 11%;
 
-    --popover: 215 100% 97%;
+    --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
     --primary: 217 77% 60%; /* #4A8FE7 */
     --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 215 80% 90%; /* A lighter blue for secondary elements */
+    --secondary: 215 80% 92%; /* Lighter secondary */
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 215 60% 88%; /* Adjusted muted for better contrast */
-    --muted-foreground: 222 30% 45%; /* Adjusted muted foreground */
+    --muted: 215 60% 90%; /* Cleaner muted */
+    --muted-foreground: 222 30% 45%;
 
     --accent: 267 66% 65%; /* #A06EE1 */
     --accent-foreground: 0 0% 100%; /* White text on accent */
@@ -28,8 +28,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217 50% 85%; /* Adjusted border */
-    --input: 217 50% 90%; /* Adjusted input */
+    --border: 217 50% 88%; /* Softer borders */
+    --input: 217 50% 92%; /* Cleaner inputs */
     --ring: 217 77% 60%; /* Primary color for rings */
 
     --chart-1: 217 77% 60%;
@@ -37,16 +37,16 @@
     --chart-3: 197 37% 54%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly more rounded */
 
-    /* Sidebar variables - kept for consistency with shadcn but less critical for this single-page app */
-    --sidebar-background: 215 100% 92%;
+    /* Sidebar variables */
+    --sidebar-background: 215 100% 95%;
     --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 217 77% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 90% 85%;
+    --sidebar-accent: 215 90% 88%;
     --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 217 50% 80%;
+    --sidebar-border: 217 50% 85%;
     --sidebar-ring: 217 77% 60%;
   }
 
@@ -106,6 +106,34 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Removed explicit font-family, will rely on Next.js font setup in layout.tsx */
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+}
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+  
+  .prose p {
+    @apply text-foreground/90 leading-relaxed;
   }
 }
