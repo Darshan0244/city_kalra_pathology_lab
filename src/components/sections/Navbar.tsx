@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, TestTube2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 
@@ -17,18 +17,45 @@ const navItems = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show navbar when scrolling up or at the top
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [lastScrollY]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-xl shadow-lg border-b border-white/20">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-xl shadow-lg border-b border-white/20 transform ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Brand Text Only */}
+        {/* Test Tube Icon */}
         <Link href="#home" className="hover:opacity-80 transition-opacity">
-          <div>
-            <h1 className="text-xl font-bold text-primary leading-tight">
-              City Kalra
-              <br />
-              <span className="text-sm font-medium text-accent">Pathology Laboratory</span>
-            </h1>
+          <div className="flex items-center space-x-2">
+            <TestTube2 className="h-8 w-8 text-primary" />
+            <div className="hidden sm:block">
+              <h1 className="text-lg font-bold text-primary leading-tight">
+                City Kalra
+                <br />
+                <span className="text-xs font-medium text-accent">Pathology Laboratory</span>
+              </h1>
+            </div>
           </div>
         </Link>
 
@@ -58,9 +85,12 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-white/90 backdrop-blur-xl p-6">
               <SheetTitle>
-                <div>
-                  <h1 className="text-lg font-bold text-primary">City Kalra</h1>
-                  <span className="text-xs text-accent">Pathology Laboratory</span>
+                <div className="flex items-center space-x-2">
+                  <TestTube2 className="h-6 w-6 text-primary" />
+                  <div>
+                    <h1 className="text-lg font-bold text-primary">City Kalra</h1>
+                    <span className="text-xs text-accent">Pathology Laboratory</span>
+                  </div>
                 </div>
               </SheetTitle>
               <div className="flex flex-col space-y-6 mt-8">
