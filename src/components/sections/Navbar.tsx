@@ -24,8 +24,8 @@ export default function Navbar() {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
       
-      // Show navbar when scrolling up or at the top
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+      // Only show navbar when scrolling up AND not at the very top
+      if (currentScrollY < lastScrollY && currentScrollY > 50) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
