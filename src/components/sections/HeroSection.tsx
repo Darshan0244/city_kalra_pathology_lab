@@ -17,18 +17,16 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gray-900/60"></div>
       </div>
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Logo */}
+        {/* Logo without background */}
         <div className="mb-8 flex justify-center">
-          <div className="bg-white/95 backdrop-blur-sm rounded-full p-6 shadow-2xl">
-            <Image
-              src="/images/KalraLabLogo.png"
-              alt="City Kalra Pathology Laboratory Logo"
-              width={120}
-              height={120}
-              className="rounded-full"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/KalraLabLogo.png"
+            alt="City Kalra Pathology Laboratory Logo"
+            width={120}
+            height={120}
+            className="rounded-full shadow-2xl"
+            priority
+          />
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
