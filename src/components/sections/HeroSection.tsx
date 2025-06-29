@@ -17,13 +17,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gray-900/60"></div>
       </div>
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Logo without any background, border, or shadow */}
+        {/* Logo without any background, border, or shadow - bigger size */}
         <div className="mb-8 flex justify-center">
           <Image
             src="/images/KalraLabLogo.png"
             alt="City Kalra Pathology Laboratory Logo"
-            width={120}
-            height={120}
+            width={160}
+            height={160}
             className=""
             priority
           />
