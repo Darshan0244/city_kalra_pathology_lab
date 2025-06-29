@@ -8,7 +8,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           {/* Logo positioned above the heading - doubled size, minimal spacing */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-1">
             <Image
               src="/images/KalraLabLogo.png"
               alt="City Kalra Pathology Laboratory Logo"
