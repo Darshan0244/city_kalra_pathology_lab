@@ -7,6 +7,18 @@ export default function AboutSection() {
     <section id="about" className="py-20 md:py-28 bg-gradient-to-br from-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
+          {/* Logo positioned above the heading */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/KalraLabLogo.png"
+              alt="City Kalra Pathology Laboratory Logo"
+              width={180}
+              height={180}
+              className="drop-shadow-lg"
+              priority
+            />
+          </div>
+          
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             About City Kalra Pathology Laboratory
           </h2>
