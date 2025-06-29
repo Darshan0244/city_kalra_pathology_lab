@@ -4,11 +4,11 @@ import { Award, Target, Users, CheckCircle } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-8 md:py-12 bg-gradient-to-br from-secondary/20 to-background">
+    <section id="about" className="py-2 md:py-4 bg-gradient-to-br from-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           {/* Logo positioned above the heading - doubled size, minimal spacing */}
-          <div className="flex justify-center mb-1">
+          <div className="flex justify-center mb-0">
             <Image
               src="/images/KalraLabLogo.png"
               alt="City Kalra Pathology Laboratory Logo"
@@ -19,7 +19,7 @@ export default function AboutSection() {
             />
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 -mt-4">
             About City Kalra Pathology Laboratory
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
