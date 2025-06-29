@@ -4,7 +4,7 @@ import { Award, Target, Users, CheckCircle } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-gradient-to-br from-secondary/20 to-background">
+    <section id="about" className="py-8 md:py-12 bg-gradient-to-br from-secondary/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           {/* Logo positioned above the heading - doubled size, minimal spacing */}
