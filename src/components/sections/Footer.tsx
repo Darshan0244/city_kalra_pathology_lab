@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
               <Image
-                src="/images/KalraLabLogo copy.png"
+                src="/images/KalraLabLogo.png"
                 alt="City Kalra Pathology Laboratory Logo"
                 width={60}
                 height={60}

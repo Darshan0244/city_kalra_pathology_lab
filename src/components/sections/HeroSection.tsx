@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-background via-secondary/30 to-background pt-20 px-4">
+    <section id="home" className="relative min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-background via-secondary/30 to-background pt-16 px-4">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/City_Kalra.png"
@@ -19,9 +19,9 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <div className="bg-white/95 backdrop-blur-sm rounded-full p-4 shadow-2xl">
+          <div className="bg-white/95 backdrop-blur-sm rounded-full p-6 shadow-2xl">
             <Image
-              src="/images/KalraLabLogo copy.png"
+              src="/images/KalraLabLogo.png"
               alt="City Kalra Pathology Laboratory Logo"
               width={120}
               height={120}
@@ -42,10 +42,10 @@ export default function HeroSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" asChild className="w-full sm:w-auto shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105">
+          <Button size="lg" asChild className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105">
             <Link href="#services">Explore Our Services</Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto shadow-xl hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105 border-2 border-white/80 text-white hover:bg-white hover:text-primary">
+          <Button size="lg" variant="outline" asChild className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-white/80 text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg shadow-xl hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105">
             <Link href="#contact">Book an Appointment</Link>
           </Button>
         </div>

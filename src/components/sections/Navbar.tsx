@@ -21,29 +21,29 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="#home" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           <div className="relative">
             <Image
-              src="/images/KalraLabLogo copy.png"
+              src="/images/KalraLabLogo.png"
               alt="City Kalra Pathology Laboratory Logo"
-              width={50}
-              height={50}
+              width={45}
+              height={45}
               className="rounded-full shadow-md"
             />
           </div>
           <div className="hidden md:block">
-            <h1 className="text-xl font-bold text-primary leading-tight">
+            <h1 className="text-lg font-bold text-primary leading-tight">
               City Kalra
               <br />
-              <span className="text-sm font-medium text-accent">Pathology Laboratory</span>
+              <span className="text-xs font-medium text-accent">Pathology Laboratory</span>
             </h1>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8 items-center">
+        <nav className="hidden md:flex space-x-6 items-center">
           {navItems.map((item) => (
             <Link key={item.label} href={item.href} legacyBehavior>
               <a className="text-foreground hover:text-primary transition-colors font-medium text-sm relative group">
@@ -52,7 +52,7 @@ export default function Navbar() {
               </a>
             </Link>
           ))}
-          <Button asChild className="shadow-md hover:shadow-lg transition-shadow">
+          <Button asChild className="ml-4 bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
             <Link href="#contact">Book Test</Link>
           </Button>
         </nav>
@@ -70,7 +70,7 @@ export default function Navbar() {
               <SheetTitle>
                 <div className="flex items-center space-x-3">
                   <Image
-                    src="/images/KalraLabLogo copy.png"
+                    src="/images/KalraLabLogo.png"
                     alt="City Kalra Pathology Laboratory Logo"
                     width={40}
                     height={40}
@@ -93,7 +93,7 @@ export default function Navbar() {
                   </SheetClose>
                 ))}
                 <SheetClose asChild>
-                  <Button asChild className="mt-6" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button asChild className="mt-6 bg-primary hover:bg-primary/90 text-white" onClick={() => setIsMobileMenuOpen(false)}>
                     <Link href="#contact">Book Test</Link>
                   </Button>
                 </SheetClose>
