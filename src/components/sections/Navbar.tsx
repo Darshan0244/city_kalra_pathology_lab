@@ -19,7 +19,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-xl shadow-lg border-b border-white/20">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Brand Text Only */}
         <Link href="#home" className="hover:opacity-80 transition-opacity">
@@ -56,7 +56,7 @@ export default function Navbar() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] bg-white p-6">
+            <SheetContent side="right" className="w-[300px] bg-white/90 backdrop-blur-xl p-6">
               <SheetTitle>
                 <div>
                   <h1 className="text-lg font-bold text-primary">City Kalra</h1>
