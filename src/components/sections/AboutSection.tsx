@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Award, Target, Users, CheckCircle } from 'lucide-react';
+import { Target, Users } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -71,15 +71,6 @@ export default function AboutSection() {
                 className="w-full h-full object-cover"
                 data-ai-hint="modern lab team"
               />
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl p-4 shadow-xl">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="h-8 w-8 text-green-500" />
-                <div>
-                  <p className="font-semibold text-primary">Certified Lab</p>
-                  <p className="text-sm text-foreground/70">ISO Compliant</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
