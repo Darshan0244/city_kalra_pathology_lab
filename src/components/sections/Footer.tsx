@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react'; 
-import Image from 'next/image';
 
 const navItems = [
   { label: 'About Us', href: '#about' },
@@ -21,20 +20,11 @@ export default function Footer() {
     <footer className="bg-gradient-to-r from-primary to-accent text-primary-foreground py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-12 mb-12 pb-8 border-b border-primary-foreground/20">
-          {/* Column 1: Logo and About */}
+          {/* Column 1: About */}
           <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
-              <Image
-                src="/images/KalraLabLogo.png"
-                alt="City Kalra Pathology Laboratory Logo"
-                width={60}
-                height={60}
-                className="rounded-full shadow-lg"
-              />
-              <div>
-                <h3 className="text-2xl font-bold">City Kalra</h3>
-                <p className="text-sm opacity-90">Pathology Laboratory</p>
-              </div>
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold">City Kalra</h3>
+              <p className="text-lg opacity-90">Pathology Laboratory</p>
             </div>
             <p className="text-primary-foreground/90 leading-relaxed max-w-sm mx-auto md:mx-0">
               City Kalra Pathology Laboratory is dedicated to providing precise diagnostic services with a focus on patient care and technological advancement.

@@ -17,18 +17,6 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gray-900/60"></div>
       </div>
       <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Logo without any background, border, or shadow - bigger size */}
-        <div className="mb-8 flex justify-center">
-          <Image
-            src="/images/KalraLabLogo.png"
-            alt="City Kalra Pathology Laboratory Logo"
-            width={160}
-            height={160}
-            className=""
-            priority
-          />
-        </div>
-        
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
           <span className="text-white drop-shadow-lg">City Kalra</span>
           <br />
@@ -39,13 +27,25 @@ export default function HeroSection() {
           Precise Diagnostics, Trusted Care. Your Health, Our Priority.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Button size="lg" asChild className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg shadow-xl hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105">
             <Link href="#services">Explore Our Services</Link>
           </Button>
           <Button size="lg" variant="outline" asChild className="w-full sm:w-auto bg-white/10 backdrop-blur-sm border-2 border-white/80 text-white hover:bg-white hover:text-primary px-8 py-3 rounded-lg shadow-xl hover:shadow-accent/30 transition-all duration-300 transform hover:scale-105">
             <Link href="#contact">Book an Appointment</Link>
           </Button>
+        </div>
+
+        {/* Logo positioned below buttons - much bigger size */}
+        <div className="flex justify-center">
+          <Image
+            src="/images/KalraLabLogo.png"
+            alt="City Kalra Pathology Laboratory Logo"
+            width={220}
+            height={220}
+            className=""
+            priority
+          />
         </div>
       </div>
     </section>

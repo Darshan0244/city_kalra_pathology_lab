@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 
 const navItems = [
@@ -22,22 +21,13 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg border-b border-primary/10">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="#home" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-          <div className="relative">
-            <Image
-              src="/images/KalraLabLogo.png"
-              alt="City Kalra Pathology Laboratory Logo"
-              width={45}
-              height={45}
-              className="rounded-full shadow-md"
-            />
-          </div>
-          <div className="hidden md:block">
-            <h1 className="text-lg font-bold text-primary leading-tight">
+        {/* Brand Text Only */}
+        <Link href="#home" className="hover:opacity-80 transition-opacity">
+          <div>
+            <h1 className="text-xl font-bold text-primary leading-tight">
               City Kalra
               <br />
-              <span className="text-xs font-medium text-accent">Pathology Laboratory</span>
+              <span className="text-sm font-medium text-accent">Pathology Laboratory</span>
             </h1>
           </div>
         </Link>
@@ -68,18 +58,9 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-white p-6">
               <SheetTitle>
-                <div className="flex items-center space-x-3">
-                  <Image
-                    src="/images/KalraLabLogo.png"
-                    alt="City Kalra Pathology Laboratory Logo"
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <h1 className="text-lg font-bold text-primary">City Kalra</h1>
-                    <span className="text-xs text-accent">Pathology Laboratory</span>
-                  </div>
+                <div>
+                  <h1 className="text-lg font-bold text-primary">City Kalra</h1>
+                  <span className="text-xs text-accent">Pathology Laboratory</span>
                 </div>
               </SheetTitle>
               <div className="flex flex-col space-y-6 mt-8">
