@@ -18,11 +18,11 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-lg">
+          <span className="text-primary drop-shadow-lg">
             City Kalra
           </span>
           <br />
-          <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent drop-shadow-lg">
+          <span className="text-accent drop-shadow-lg">
             Pathology Laboratory
           </span>
         </h1>
