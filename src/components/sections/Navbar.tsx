@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Test Tube Icon */}
         <Link href="#home" className="hover:opacity-80 transition-opacity">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
             <TestTube2 className="h-8 w-8 text-primary" />
             <div className="hidden sm:block">
               <h1 className="text-lg font-bold text-primary leading-tight">
@@ -61,7 +61,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-white/90 backdrop-blur-xl p-6">
               <SheetTitle>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <TestTube2 className="h-7 w-7 text-primary" />
                   <div>
                     <h1 className="text-lg font-bold text-primary">City Kalra</h1>
